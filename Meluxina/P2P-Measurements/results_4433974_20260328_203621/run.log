@@ -1,0 +1,772 @@
+============================================================
+Job ID     : 4433974
+Timestamp  : 20260328_203621
+Results dir: results_4433974_20260328_203621
+CLEAN_LD_PATH: /apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0/nvvm/lib64:/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0/extras/CUPTI/lib64:/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0/targets/x86_64-linux/lib:/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib/x86_64-unknown-linux-gnu:/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/zstd/1.5.6-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/lz4/1.10.0-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/Z3/4.13.4-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/GMP/6.3.0-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/Python/3.13.1-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/OpenSSL/3/lib64:/apps/USE/easybuild/release/2025.1/software/libffi/3.4.5-GCCcore-14.2.0/lib64:/apps/USE/easybuild/release/2025.1/software/SQLite/3.47.2-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/Tcl/8.6.16-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/libreadline/8.2-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/bzip2/1.0.8-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/binutils/2.42-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/ncurses/6.5-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/libxml2/2.13.4-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/zlib/1.3.1-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/XZ/5.6.3-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/GCCcore/14.2.0/lib64
+============================================================
+
+============================================================
+Starting benchmarks
+============================================================
+
+===========================
+N = 117500000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=117500000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.010056 seconds
+Total transferred: 0.875443 GB
+P2P Bandwidth:     93.476356 GB/s
+Verification:      PASS
+    -> elapsed=0.010056s  bandwidth=93.476356 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=117500000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.010330 seconds
+Total transferred: 1.750886 GB
+P2P Bandwidth:     181.994865 GB/s
+Verification:      PASS
+    -> elapsed=0.010330s  bandwidth=181.994865 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=117500000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.010354 seconds
+Total transferred: 2.626330 GB
+P2P Bandwidth:     272.357403 GB/s
+Verification:      PASS
+    -> elapsed=0.010354s  bandwidth=272.357403 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=117500000
+Elapsed time:      0.010011 s
+Total transferred: 0.875443 GB
+P2P Bandwidth:     93.894874 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/117500000 samples)
+    -> elapsed=0.010011s  bandwidth=93.894874 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=117500000
+Elapsed time:      0.011209 s
+Total transferred: 1.750886 GB
+P2P Bandwidth:     167.722200 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/117500000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/117500000 samples)
+    -> elapsed=0.011209s  bandwidth=167.722200 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=117500000
+Elapsed time:      0.011268 s
+Total transferred: 2.626330 GB
+P2P Bandwidth:     250.263156 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/117500000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/117500000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/117500000 samples)
+    -> elapsed=0.011268s  bandwidth=250.263156 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=117500000
+Elapsed time:      0.010007 s
+Total transferred: 0.875443 GB
+P2P Bandwidth:     93.935142 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/117500000 samples)
+    -> elapsed=0.010007s  bandwidth=93.935142 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=117500000
+Elapsed time:      0.010975 s
+Total transferred: 1.750886 GB
+P2P Bandwidth:     171.296494 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/117500000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/117500000 samples)
+    -> elapsed=0.010975s  bandwidth=171.296494 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=117500000
+Elapsed time:      0.011127 s
+Total transferred: 2.626330 GB
+P2P Bandwidth:     253.437696 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/117500000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/117500000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/117500000 samples)
+    -> elapsed=0.011127s  bandwidth=253.437696 GB/s  status=ok
+
+===========================
+N = 217500000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=217500000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.018802 seconds
+Total transferred: 1.620501 GB
+P2P Bandwidth:     92.543703 GB/s
+Verification:      PASS
+    -> elapsed=0.018802s  bandwidth=92.543703 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=217500000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.018842 seconds
+Total transferred: 3.241003 GB
+P2P Bandwidth:     184.693947 GB/s
+Verification:      PASS
+    -> elapsed=0.018842s  bandwidth=184.693947 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=217500000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.019418 seconds
+Total transferred: 4.861504 GB
+P2P Bandwidth:     268.822726 GB/s
+Verification:      PASS
+    -> elapsed=0.019418s  bandwidth=268.822726 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=217500000
+Elapsed time:      0.018532 s
+Total transferred: 1.620501 GB
+P2P Bandwidth:     93.891456 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/217500000 samples)
+    -> elapsed=0.018532s  bandwidth=93.891456 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=217500000
+Elapsed time:      0.033777 s
+Total transferred: 3.241003 GB
+P2P Bandwidth:     103.028693 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/217500000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/217500000 samples)
+    -> elapsed=0.033777s  bandwidth=103.028693 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=217500000
+Elapsed time:      0.020468 s
+Total transferred: 4.861504 GB
+P2P Bandwidth:     255.032288 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/217500000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/217500000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/217500000 samples)
+    -> elapsed=0.020468s  bandwidth=255.032288 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=217500000
+Elapsed time:      0.018533 s
+Total transferred: 1.620501 GB
+P2P Bandwidth:     93.886624 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/217500000 samples)
+    -> elapsed=0.018533s  bandwidth=93.886624 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=217500000
+Elapsed time:      0.019518 s
+Total transferred: 3.241003 GB
+P2P Bandwidth:     178.297883 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/217500000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/217500000 samples)
+    -> elapsed=0.019518s  bandwidth=178.297883 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=217500000
+Elapsed time:      0.020500 s
+Total transferred: 4.861504 GB
+P2P Bandwidth:     254.631872 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/217500000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/217500000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/217500000 samples)
+    -> elapsed=0.020500s  bandwidth=254.631872 GB/s  status=ok
+
+===========================
+N = 318750000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=318750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.027196 seconds
+Total transferred: 2.374873 GB
+P2P Bandwidth:     93.763206 GB/s
+Verification:      PASS
+    -> elapsed=0.027196s  bandwidth=93.763206 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=318750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.027588 seconds
+Total transferred: 4.749745 GB
+P2P Bandwidth:     184.863717 GB/s
+Verification:      PASS
+    -> elapsed=0.027588s  bandwidth=184.863717 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=318750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.028871 seconds
+Total transferred: 7.124618 GB
+P2P Bandwidth:     264.971226 GB/s
+Verification:      PASS
+    -> elapsed=0.028871s  bandwidth=264.971226 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=318750000
+Elapsed time:      0.027134 s
+Total transferred: 2.374873 GB
+P2P Bandwidth:     93.978237 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/318750000 samples)
+    -> elapsed=0.027134s  bandwidth=93.978237 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=318750000
+Elapsed time:      0.028504 s
+Total transferred: 4.749745 GB
+P2P Bandwidth:     178.921420 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/318750000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/318750000 samples)
+    -> elapsed=0.028504s  bandwidth=178.921420 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=318750000
+Elapsed time:      0.030285 s
+Total transferred: 7.124618 GB
+P2P Bandwidth:     252.601285 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/318750000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/318750000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/318750000 samples)
+    -> elapsed=0.030285s  bandwidth=252.601285 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=318750000
+Elapsed time:      0.027138 s
+Total transferred: 2.374873 GB
+P2P Bandwidth:     93.964201 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/318750000 samples)
+    -> elapsed=0.027138s  bandwidth=93.964201 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=318750000
+Elapsed time:      0.028200 s
+Total transferred: 4.749745 GB
+P2P Bandwidth:     180.851634 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/318750000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/318750000 samples)
+    -> elapsed=0.028200s  bandwidth=180.851634 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=318750000
+Elapsed time:      0.030068 s
+Total transferred: 7.124618 GB
+P2P Bandwidth:     254.421961 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/318750000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/318750000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/318750000 samples)
+    -> elapsed=0.030068s  bandwidth=254.421961 GB/s  status=ok
+
+===========================
+N = 418750000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=418750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.035710 seconds
+Total transferred: 3.119931 GB
+P2P Bandwidth:     93.811004 GB/s
+Verification:      PASS
+    -> elapsed=0.035710s  bandwidth=93.811004 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=418750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.036105 seconds
+Total transferred: 6.239861 GB
+P2P Bandwidth:     185.570290 GB/s
+Verification:      PASS
+    -> elapsed=0.036105s  bandwidth=185.570290 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=418750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.037885 seconds
+Total transferred: 9.359792 GB
+P2P Bandwidth:     265.276840 GB/s
+Verification:      PASS
+    -> elapsed=0.037885s  bandwidth=265.276840 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=418750000
+Elapsed time:      0.035637 s
+Total transferred: 3.119931 GB
+P2P Bandwidth:     94.003682 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/418750000 samples)
+    -> elapsed=0.035637s  bandwidth=94.003682 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=418750000
+Elapsed time:      0.037066 s
+Total transferred: 6.239861 GB
+P2P Bandwidth:     180.758731 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/418750000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/418750000 samples)
+    -> elapsed=0.037066s  bandwidth=180.758731 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=418750000
+Elapsed time:      0.039068 s
+Total transferred: 9.359792 GB
+P2P Bandwidth:     257.243888 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/418750000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/418750000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/418750000 samples)
+    -> elapsed=0.039068s  bandwidth=257.243888 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=418750000
+Elapsed time:      0.035644 s
+Total transferred: 3.119931 GB
+P2P Bandwidth:     93.984819 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/418750000 samples)
+    -> elapsed=0.035644s  bandwidth=93.984819 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=418750000
+Elapsed time:      0.036826 s
+Total transferred: 6.239861 GB
+P2P Bandwidth:     181.936015 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/418750000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/418750000 samples)
+    -> elapsed=0.036826s  bandwidth=181.936015 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=418750000
+Elapsed time:      0.039130 s
+Total transferred: 9.359792 GB
+P2P Bandwidth:     256.836368 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/418750000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/418750000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/418750000 samples)
+    -> elapsed=0.039130s  bandwidth=256.836368 GB/s  status=ok
+
+===========================
+N = 520000000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=520000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.044315 seconds
+Total transferred: 3.874302 GB
+P2P Bandwidth:     93.873195 GB/s
+Verification:      PASS
+    -> elapsed=0.044315s  bandwidth=93.873195 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=520000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.044790 seconds
+Total transferred: 7.748604 GB
+P2P Bandwidth:     185.755627 GB/s
+Verification:      PASS
+    -> elapsed=0.044790s  bandwidth=185.755627 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=520000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.046952 seconds
+Total transferred: 11.622906 GB
+P2P Bandwidth:     265.803322 GB/s
+Verification:      PASS
+    -> elapsed=0.046952s  bandwidth=265.803322 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=520000000
+Elapsed time:      0.044254 s
+Total transferred: 3.874302 GB
+P2P Bandwidth:     94.002665 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/520000000 samples)
+    -> elapsed=0.044254s  bandwidth=94.002665 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=520000000
+Elapsed time:      0.045749 s
+Total transferred: 7.748604 GB
+P2P Bandwidth:     181.862101 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/520000000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/520000000 samples)
+    -> elapsed=0.045749s  bandwidth=181.862101 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=520000000
+Elapsed time:      0.048783 s
+Total transferred: 11.622906 GB
+P2P Bandwidth:     255.827740 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/520000000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/520000000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/520000000 samples)
+    -> elapsed=0.048783s  bandwidth=255.827740 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=520000000
+Elapsed time:      0.044256 s
+Total transferred: 3.874302 GB
+P2P Bandwidth:     93.998614 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/520000000 samples)
+    -> elapsed=0.044256s  bandwidth=93.998614 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=520000000
+Elapsed time:      0.045535 s
+Total transferred: 7.748604 GB
+P2P Bandwidth:     182.717197 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/520000000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/520000000 samples)
+    -> elapsed=0.045535s  bandwidth=182.717197 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=520000000
+Elapsed time:      0.048607 s
+Total transferred: 11.622906 GB
+P2P Bandwidth:     256.752556 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/520000000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/520000000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/520000000 samples)
+    -> elapsed=0.048607s  bandwidth=256.752556 GB/s  status=ok
+
+===========================
+N = 1240000000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=1240000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.106214 seconds
+Total transferred: 9.238720 GB
+P2P Bandwidth:     93.396520 GB/s
+Verification:      PASS
+    -> elapsed=0.106214s  bandwidth=93.396520 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=1240000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.107117 seconds
+Total transferred: 18.477440 GB
+P2P Bandwidth:     185.217728 GB/s
+Verification:      PASS
+    -> elapsed=0.107117s  bandwidth=185.217728 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=1240000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.113756 seconds
+Total transferred: 27.716160 GB
+P2P Bandwidth:     261.612709 GB/s
+Verification:      PASS
+    -> elapsed=0.113756s  bandwidth=261.612709 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=1240000000
+Elapsed time:      0.106158 s
+Total transferred: 9.238720 GB
+P2P Bandwidth:     93.445813 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/1240000000 samples)
+    -> elapsed=0.106158s  bandwidth=93.445813 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=1240000000
+Elapsed time:      0.108053 s
+Total transferred: 18.477440 GB
+P2P Bandwidth:     183.613650 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/1240000000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/1240000000 samples)
+    -> elapsed=0.108053s  bandwidth=183.613650 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=1240000000
+Elapsed time:      0.112891 s
+Total transferred: 27.716160 GB
+P2P Bandwidth:     263.617214 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/1240000000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/1240000000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/1240000000 samples)
+    -> elapsed=0.112891s  bandwidth=263.617214 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=1240000000
+Elapsed time:      0.106168 s
+Total transferred: 9.238720 GB
+P2P Bandwidth:     93.436789 GB/s
+Verification d_B (dev0→dev1): PASSED (1000/1240000000 samples)
+    -> elapsed=0.106168s  bandwidth=93.436789 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=1240000000
+Elapsed time:      0.107926 s
+Total transferred: 18.477440 GB
+P2P Bandwidth:     183.829845 GB/s
+Verification d_C (dev0→dev1): PASSED (1000/1240000000 samples)
+Verification d_D (dev1→dev0): PASSED (1000/1240000000 samples)
+    -> elapsed=0.107926s  bandwidth=183.829845 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=1240000000
+Elapsed time:      0.113262 s
+Total transferred: 27.716160 GB
+P2P Bandwidth:     262.753759 GB/s
+Verification d_B1 (dev1→dev0): PASSED (1000/1240000000 samples)
+Verification d_C1 (dev2→dev0): PASSED (1000/1240000000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/1240000000 samples)
+    -> elapsed=0.113262s  bandwidth=262.753759 GB/s  status=ok
+
+===========================
+N = 58750000  (4-to-4)
+===========================
+
+>>> Running: framework=omp_off  version=v4_4  N=58750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.011506 seconds
+Total transferred: 5.252659 GB
+P2P Bandwidth:     490.175602 GB/s
+Verification:      PASS
+    -> elapsed=0.011506s  bandwidth=490.175602 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4_4  N=58750000
+Elapsed time:      0.006792 s
+Total transferred: 5.252659 GB
+P2P Bandwidth:     830.380320 GB/s
+Verification d_A2  (dev0→dev1): PASSED (1000/58750000 samples)
+Verification d_A3  (dev0→dev2): PASSED (1000/58750000 samples)
+Verification d_A4  (dev0→dev3): PASSED (1000/58750000 samples)
+Verification d_B1  (dev1→dev0): PASSED (1000/58750000 samples)
+Verification d_B3  (dev1→dev2): PASSED (1000/58750000 samples)
+Verification d_B4  (dev1→dev3): PASSED (1000/58750000 samples)
+Verification d_C1  (dev2→dev0): PASSED (1000/58750000 samples)
+Verification d_C2  (dev2→dev1): PASSED (1000/58750000 samples)
+Verification d_C4  (dev2→dev3): PASSED (1000/58750000 samples)
+Verification d_D1  (dev3→dev0): PASSED (1000/58750000 samples)
+Verification d_D2  (dev3→dev1): PASSED (1000/58750000 samples)
+Verification d_D3  (dev3→dev2): PASSED (1000/58750000 samples)
+    -> elapsed=0.006792s  bandwidth=830.380320 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4_4  N=58750000
+Elapsed time:      0.006554 s
+Total transferred: 5.252659 GB
+P2P Bandwidth:     860.557844 GB/s
+Verification d_C1 (dev2→dev0): PASSED (1000/58750000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/58750000 samples)
+Verification d_A2 (dev0→dev1): PASSED (1000/58750000 samples)
+Verification d_C2 (dev2→dev1): PASSED (1000/58750000 samples)
+Verification d_D2 (dev3→dev1): PASSED (1000/58750000 samples)
+Verification d_A3 (dev0→dev2): PASSED (1000/58750000 samples)
+Verification d_B3 (dev1→dev2): PASSED (1000/58750000 samples)
+Verification d_D3 (dev3→dev2): PASSED (1000/58750000 samples)
+Verification d_A4 (dev0→dev3): PASSED (1000/58750000 samples)
+Verification d_B4 (dev1→dev3): PASSED (1000/58750000 samples)
+Verification d_C4 (dev2→dev3): PASSED (1000/58750000 samples)
+    -> elapsed=0.006554s  bandwidth=860.557844 GB/s  status=ok
+
+===========================
+N = 108750000  (4-to-4)
+===========================
+
+>>> Running: framework=omp_off  version=v4_4  N=108750000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.019727 seconds
+Total transferred: 9.723008 GB
+P2P Bandwidth:     529.224130 GB/s
+Verification:      PASS
+    -> elapsed=0.019727s  bandwidth=529.224130 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4_4  N=108750000
+Elapsed time:      0.013989 s
+Total transferred: 9.723008 GB
+P2P Bandwidth:     746.302174 GB/s
+Verification d_A2  (dev0→dev1): PASSED (1000/108750000 samples)
+Verification d_A3  (dev0→dev2): PASSED (1000/108750000 samples)
+Verification d_A4  (dev0→dev3): PASSED (1000/108750000 samples)
+Verification d_B1  (dev1→dev0): PASSED (1000/108750000 samples)
+Verification d_B3  (dev1→dev2): PASSED (1000/108750000 samples)
+Verification d_B4  (dev1→dev3): PASSED (1000/108750000 samples)
+Verification d_C1  (dev2→dev0): PASSED (1000/108750000 samples)
+Verification d_C2  (dev2→dev1): PASSED (1000/108750000 samples)
+Verification d_C4  (dev2→dev3): PASSED (1000/108750000 samples)
+Verification d_D1  (dev3→dev0): PASSED (1000/108750000 samples)
+Verification d_D2  (dev3→dev1): PASSED (1000/108750000 samples)
+Verification d_D3  (dev3→dev2): PASSED (1000/108750000 samples)
+    -> elapsed=0.013989s  bandwidth=746.302174 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4_4  N=108750000
+Elapsed time:      0.011404 s
+Total transferred: 9.723008 GB
+P2P Bandwidth:     915.465248 GB/s
+Verification d_C1 (dev2→dev0): PASSED (1000/108750000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/108750000 samples)
+Verification d_A2 (dev0→dev1): PASSED (1000/108750000 samples)
+Verification d_C2 (dev2→dev1): PASSED (1000/108750000 samples)
+Verification d_D2 (dev3→dev1): PASSED (1000/108750000 samples)
+Verification d_A3 (dev0→dev2): PASSED (1000/108750000 samples)
+Verification d_B3 (dev1→dev2): PASSED (1000/108750000 samples)
+Verification d_D3 (dev3→dev2): PASSED (1000/108750000 samples)
+Verification d_A4 (dev0→dev3): PASSED (1000/108750000 samples)
+Verification d_B4 (dev1→dev3): PASSED (1000/108750000 samples)
+Verification d_C4 (dev2→dev3): PASSED (1000/108750000 samples)
+    -> elapsed=0.011404s  bandwidth=915.465248 GB/s  status=ok
+
+===========================
+N = 159375000  (4-to-4)
+===========================
+
+>>> Running: framework=omp_off  version=v4_4  N=159375000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.033271 seconds
+Total transferred: 14.249235 GB
+P2P Bandwidth:     459.862207 GB/s
+Verification:      PASS
+    -> elapsed=0.033271s  bandwidth=459.862207 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4_4  N=159375000
+Elapsed time:      0.019848 s
+Total transferred: 14.249235 GB
+P2P Bandwidth:     770.863579 GB/s
+Verification d_A2  (dev0→dev1): PASSED (1000/159375000 samples)
+Verification d_A3  (dev0→dev2): PASSED (1000/159375000 samples)
+Verification d_A4  (dev0→dev3): PASSED (1000/159375000 samples)
+Verification d_B1  (dev1→dev0): PASSED (1000/159375000 samples)
+Verification d_B3  (dev1→dev2): PASSED (1000/159375000 samples)
+Verification d_B4  (dev1→dev3): PASSED (1000/159375000 samples)
+Verification d_C1  (dev2→dev0): PASSED (1000/159375000 samples)
+Verification d_C2  (dev2→dev1): PASSED (1000/159375000 samples)
+Verification d_C4  (dev2→dev3): PASSED (1000/159375000 samples)
+Verification d_D1  (dev3→dev0): PASSED (1000/159375000 samples)
+Verification d_D2  (dev3→dev1): PASSED (1000/159375000 samples)
+Verification d_D3  (dev3→dev2): PASSED (1000/159375000 samples)
+    -> elapsed=0.019848s  bandwidth=770.863579 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4_4  N=159375000
+Elapsed time:      0.023981 s
+Total transferred: 14.249235 GB
+P2P Bandwidth:     638.008920 GB/s
+Verification d_C1 (dev2→dev0): PASSED (1000/159375000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/159375000 samples)
+Verification d_A2 (dev0→dev1): PASSED (1000/159375000 samples)
+Verification d_C2 (dev2→dev1): PASSED (1000/159375000 samples)
+Verification d_D2 (dev3→dev1): PASSED (1000/159375000 samples)
+Verification d_A3 (dev0→dev2): PASSED (1000/159375000 samples)
+Verification d_B3 (dev1→dev2): PASSED (1000/159375000 samples)
+Verification d_D3 (dev3→dev2): PASSED (1000/159375000 samples)
+Verification d_A4 (dev0→dev3): PASSED (1000/159375000 samples)
+Verification d_B4 (dev1→dev3): PASSED (1000/159375000 samples)
+Verification d_C4 (dev2→dev3): PASSED (1000/159375000 samples)
+    -> elapsed=0.023981s  bandwidth=638.008920 GB/s  status=ok
+
+===========================
+N = 209375000  (4-to-4)
+===========================
+
+>>> Running: framework=omp_off  version=v4_4  N=209375000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.036319 seconds
+Total transferred: 18.719584 GB
+P2P Bandwidth:     553.429069 GB/s
+Verification:      PASS
+    -> elapsed=0.036319s  bandwidth=553.429069 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4_4  N=209375000
+Elapsed time:      0.026355 s
+Total transferred: 18.719584 GB
+P2P Bandwidth:     762.669716 GB/s
+Verification d_A2  (dev0→dev1): PASSED (1000/209375000 samples)
+Verification d_A3  (dev0→dev2): PASSED (1000/209375000 samples)
+Verification d_A4  (dev0→dev3): PASSED (1000/209375000 samples)
+Verification d_B1  (dev1→dev0): PASSED (1000/209375000 samples)
+Verification d_B3  (dev1→dev2): PASSED (1000/209375000 samples)
+Verification d_B4  (dev1→dev3): PASSED (1000/209375000 samples)
+Verification d_C1  (dev2→dev0): PASSED (1000/209375000 samples)
+Verification d_C2  (dev2→dev1): PASSED (1000/209375000 samples)
+Verification d_C4  (dev2→dev3): PASSED (1000/209375000 samples)
+Verification d_D1  (dev3→dev0): PASSED (1000/209375000 samples)
+Verification d_D2  (dev3→dev1): PASSED (1000/209375000 samples)
+Verification d_D3  (dev3→dev2): PASSED (1000/209375000 samples)
+    -> elapsed=0.026355s  bandwidth=762.669716 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4_4  N=209375000
+Elapsed time:      0.024491 s
+Total transferred: 18.719584 GB
+P2P Bandwidth:     820.707246 GB/s
+Verification d_C1 (dev2→dev0): PASSED (1000/209375000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/209375000 samples)
+Verification d_A2 (dev0→dev1): PASSED (1000/209375000 samples)
+Verification d_C2 (dev2→dev1): PASSED (1000/209375000 samples)
+Verification d_D2 (dev3→dev1): PASSED (1000/209375000 samples)
+Verification d_A3 (dev0→dev2): PASSED (1000/209375000 samples)
+Verification d_B3 (dev1→dev2): PASSED (1000/209375000 samples)
+Verification d_D3 (dev3→dev2): PASSED (1000/209375000 samples)
+Verification d_A4 (dev0→dev3): PASSED (1000/209375000 samples)
+Verification d_B4 (dev1→dev3): PASSED (1000/209375000 samples)
+Verification d_C4 (dev2→dev3): PASSED (1000/209375000 samples)
+    -> elapsed=0.024491s  bandwidth=820.707246 GB/s  status=ok
+
+===========================
+N = 260000000  (4-to-4)
+===========================
+
+>>> Running: framework=omp_off  version=v4_4  N=260000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.044987 seconds
+Total transferred: 23.245811 GB
+P2P Bandwidth:     554.827403 GB/s
+Verification:      PASS
+    -> elapsed=0.044987s  bandwidth=554.827403 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4_4  N=260000000
+Elapsed time:      0.032940 s
+Total transferred: 23.245811 GB
+P2P Bandwidth:     757.737913 GB/s
+Verification d_A2  (dev0→dev1): PASSED (1000/260000000 samples)
+Verification d_A3  (dev0→dev2): PASSED (1000/260000000 samples)
+Verification d_A4  (dev0→dev3): PASSED (1000/260000000 samples)
+Verification d_B1  (dev1→dev0): PASSED (1000/260000000 samples)
+Verification d_B3  (dev1→dev2): PASSED (1000/260000000 samples)
+Verification d_B4  (dev1→dev3): PASSED (1000/260000000 samples)
+Verification d_C1  (dev2→dev0): PASSED (1000/260000000 samples)
+Verification d_C2  (dev2→dev1): PASSED (1000/260000000 samples)
+Verification d_C4  (dev2→dev3): PASSED (1000/260000000 samples)
+Verification d_D1  (dev3→dev0): PASSED (1000/260000000 samples)
+Verification d_D2  (dev3→dev1): PASSED (1000/260000000 samples)
+Verification d_D3  (dev3→dev2): PASSED (1000/260000000 samples)
+    -> elapsed=0.032940s  bandwidth=757.737913 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4_4  N=260000000
+Elapsed time:      0.030248 s
+Total transferred: 23.245811 GB
+P2P Bandwidth:     825.180524 GB/s
+Verification d_C1 (dev2→dev0): PASSED (1000/260000000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/260000000 samples)
+Verification d_A2 (dev0→dev1): PASSED (1000/260000000 samples)
+Verification d_C2 (dev2→dev1): PASSED (1000/260000000 samples)
+Verification d_D2 (dev3→dev1): PASSED (1000/260000000 samples)
+Verification d_A3 (dev0→dev2): PASSED (1000/260000000 samples)
+Verification d_B3 (dev1→dev2): PASSED (1000/260000000 samples)
+Verification d_D3 (dev3→dev2): PASSED (1000/260000000 samples)
+Verification d_A4 (dev0→dev3): PASSED (1000/260000000 samples)
+Verification d_B4 (dev1→dev3): PASSED (1000/260000000 samples)
+Verification d_C4 (dev2→dev3): PASSED (1000/260000000 samples)
+    -> elapsed=0.030248s  bandwidth=825.180524 GB/s  status=ok
+
+===========================
+N = 310000000  (4-to-4)
+===========================
+
+>>> Running: framework=omp_off  version=v4_4  N=310000000
+omp_get_num_devices()    = 4
+omp_get_initial_device() = 4
+Elapsed time:      0.062505 seconds
+Total transferred: 27.716160 GB
+P2P Bandwidth:     476.121859 GB/s
+Verification:      PASS
+    -> elapsed=0.062505s  bandwidth=476.121859 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4_4  N=310000000
+Elapsed time:      0.038025 s
+Total transferred: 27.716160 GB
+P2P Bandwidth:     782.645008 GB/s
+Verification d_A2  (dev0→dev1): PASSED (1000/310000000 samples)
+Verification d_A3  (dev0→dev2): PASSED (1000/310000000 samples)
+Verification d_A4  (dev0→dev3): PASSED (1000/310000000 samples)
+Verification d_B1  (dev1→dev0): PASSED (1000/310000000 samples)
+Verification d_B3  (dev1→dev2): PASSED (1000/310000000 samples)
+Verification d_B4  (dev1→dev3): PASSED (1000/310000000 samples)
+Verification d_C1  (dev2→dev0): PASSED (1000/310000000 samples)
+Verification d_C2  (dev2→dev1): PASSED (1000/310000000 samples)
+Verification d_C4  (dev2→dev3): PASSED (1000/310000000 samples)
+Verification d_D1  (dev3→dev0): PASSED (1000/310000000 samples)
+Verification d_D2  (dev3→dev1): PASSED (1000/310000000 samples)
+Verification d_D3  (dev3→dev2): PASSED (1000/310000000 samples)
+    -> elapsed=0.038025s  bandwidth=782.645008 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4_4  N=310000000
+Elapsed time:      0.040879 s
+Total transferred: 27.716160 GB
+P2P Bandwidth:     728.001954 GB/s
+Verification d_C1 (dev2→dev0): PASSED (1000/310000000 samples)
+Verification d_D1 (dev3→dev0): PASSED (1000/310000000 samples)
+Verification d_A2 (dev0→dev1): PASSED (1000/310000000 samples)
+Verification d_C2 (dev2→dev1): PASSED (1000/310000000 samples)
+Verification d_D2 (dev3→dev1): PASSED (1000/310000000 samples)
+Verification d_A3 (dev0→dev2): PASSED (1000/310000000 samples)
+Verification d_B3 (dev1→dev2): PASSED (1000/310000000 samples)
+Verification d_D3 (dev3→dev2): PASSED (1000/310000000 samples)
+Verification d_A4 (dev0→dev3): PASSED (1000/310000000 samples)
+Verification d_B4 (dev1→dev3): PASSED (1000/310000000 samples)
+Verification d_C4 (dev2→dev3): PASSED (1000/310000000 samples)
+    -> elapsed=0.040879s  bandwidth=728.001954 GB/s  status=ok

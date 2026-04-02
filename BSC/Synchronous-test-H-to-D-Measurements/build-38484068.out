@@ -1,0 +1,52 @@
+unload bsc/1.0 (PATH, MANPATH)
+load bsc/1.0 (PATH, MANPATH)
+============================================================
+Stage 1: OpenMP offload + CUDA  (no NVHPC)
+============================================================
+unload bsc/1.0 (PATH, MANPATH)
+load EB/apps (PATH)
+load CUDA/12.8 (PATH, MANPATH, LD_LIBRARY_PATH, LIBRARY_PATH, C_INCLUDE_PATH,
+CPLUS_INCLUDE_PATH, CUDA_HOME, CUDA_VERSION, CUDA_INC, CUDA_INSTALL_PATH) 
+load CLANG/18.1.8 (PATH, LD_LIBRARY_PATH, LIBRARY_PATH, C_INCLUDE_PATH,
+CPLUS_INCLUDE_PATH, HDF5_DIR, HDF5_ROOT) 
+clang++ -fopenmp -fopenmp-targets=nvptx64 -Xopenmp-target=nvptx64 -march=sm_90 --cuda-path=/apps/ACC/CUDA/12.8 -Wl,-rpath,. -O3 -o version-1-off openmp-1.cc
+clang++ -fopenmp -fopenmp-targets=nvptx64 -Xopenmp-target=nvptx64 -march=sm_90 --cuda-path=/apps/ACC/CUDA/12.8 -Wl,-rpath,. -O3 -o version-2-off openmp-2.cc
+clang++ -fopenmp -fopenmp-targets=nvptx64 -Xopenmp-target=nvptx64 -march=sm_90 --cuda-path=/apps/ACC/CUDA/12.8 -Wl,-rpath,. -O3 -o version-4-off openmp-4.cc
+nvcc -O3 -Xcompiler -fopenmp -arch=sm_90 -Xlinker -rpath,/gpfs/apps/MN5/ACC/EASYBUILD/software/GCCcore/13.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/13.2.0/../../../../lib64 -o version-1-cuda version-1.cu
+nvcc -O3 -Xcompiler -fopenmp -arch=sm_90 -Xlinker -rpath,/gpfs/apps/MN5/ACC/EASYBUILD/software/GCCcore/13.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/13.2.0/../../../../lib64 -o version-2-cuda version-2.cu
+nvcc -O3 -Xcompiler -fopenmp -arch=sm_90 -Xlinker -rpath,/gpfs/apps/MN5/ACC/EASYBUILD/software/GCCcore/13.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/13.2.0/../../../../lib64 -o version-4-cuda version-4.cu
+============================================================
+Stage 2: OpenACC  (NVHPC)
+============================================================
+unload CLANG/18.1.8 (PATH, LD_LIBRARY_PATH, LIBRARY_PATH, C_INCLUDE_PATH,
+CPLUS_INCLUDE_PATH, HDF5_DIR, HDF5_ROOT) 
+unload CUDA/12.8 (PATH, MANPATH, LD_LIBRARY_PATH, LIBRARY_PATH, C_INCLUDE_PATH,
+CPLUS_INCLUDE_PATH, CUDA_HOME, CUDA_VERSION, CUDA_INC, CUDA_INSTALL_PATH) 
+unload EB/apps (PATH)
+load EB/apps (PATH)
+/bin/sh: line 1: clang++: command not found
+nvc++ -fast -mp=gpu -cuda -gpu=cc90 -Minfo=accel -lcudart -o version-1-acc version-1.cc
+/apps/ACC/EASYBUILD/software/binutils/2.40-GCCcore-12.3.0/bin/ld: warning: /scratch/tmp/38484068/pgcudafatEpZrA-RWF_Ji.o: missing .note.GNU-stack section implies executable stack
+/apps/ACC/EASYBUILD/software/binutils/2.40-GCCcore-12.3.0/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+nvc++ -fast -mp=gpu -cuda -gpu=cc90 -Minfo=accel -lcudart -o version-2-acc version-2.cc
+/apps/ACC/EASYBUILD/software/binutils/2.40-GCCcore-12.3.0/bin/ld: warning: /scratch/tmp/38484068/pgcudafatnXZrNJoqKQBQ.o: missing .note.GNU-stack section implies executable stack
+/apps/ACC/EASYBUILD/software/binutils/2.40-GCCcore-12.3.0/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+nvc++ -fast -mp=gpu -cuda -gpu=cc90 -Minfo=accel -lcudart -o version-4-acc version-4.cc
+/apps/ACC/EASYBUILD/software/binutils/2.40-GCCcore-12.3.0/bin/ld: warning: /scratch/tmp/38484068/pgcudafatRt0rbGyRsGzc.o: missing .note.GNU-stack section implies executable stack
+/apps/ACC/EASYBUILD/software/binutils/2.40-GCCcore-12.3.0/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+
+============================================================
+Verifying binaries...
+============================================================
+  OK : version-1-off
+  OK : version-2-off
+  OK : version-4-off
+  OK : version-1-cuda
+  OK : version-2-cuda
+  OK : version-4-cuda
+  OK : version-1-acc
+  OK : version-2-acc
+  OK : version-4-acc
+
+All binaries present  run jobs are cleared to start.
+============================================================

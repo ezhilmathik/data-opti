@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------
+There are messages associated with the following module(s):
+-------------------------------------------------------------------------------
+
+LUMI/25.09:
+   As the LUMI/25.09 stack uses a version of the programming environment
+   that is newer than the current default on the system (25.03), please be
+   aware of https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20251020/102-CPE/#warning-1-you-do-not-always-get-what-you-expect
+   and adapt LD_LIBRARY_PATH as needed. The easiest way to do this, is to
+   simply load lumi-CrayPath after loading all other modules, and reloading
+   it after a module change.
+
+-------------------------------------------------------------------------------
+Warning For advanced users: This module comes with the asan and debug libraries
+installed.
+However, to make sure that in the runtime the libraries are correctly loaded
+from this module
+and not from /opt/rocm, we have hardcoded the correct paths in the module
+libraries and executables.
+If you need to use the asan or debug versions of the libraries you will have to
+LD_PRELOAD
+them instead of just prepending LD_LIBRARY_PATH.
+
+
+Warning For advanced users: This module comes with the asan and debug libraries
+installed.
+However, to make sure that in the runtime the libraries are correctly loaded
+from this module
+and not from /opt/rocm, we have hardcoded the correct paths in the module
+libraries and executables.
+If you need to use the asan or debug versions of the libraries you will have to
+LD_PRELOAD
+them instead of just prepending LD_LIBRARY_PATH.
+
+rm -f version-1-hip version-2-hip version-4-hip version-1-off version-2-off version-4-off 
+amdclang++ -O3 -fopenmp -x hip --offload-arch=gfx90a -Wno-unused-result -o version-1-hip version-1.hip
+amdclang++ -O3 -fopenmp -x hip --offload-arch=gfx90a -Wno-unused-result -o version-2-hip version-2.hip
+amdclang++ -O3 -fopenmp -x hip --offload-arch=gfx90a -Wno-unused-result -o version-4-hip version-4.hip
+amdclang++ -fopenmp -fopenmp-targets=amdgcn-amd-amdhsa -Xopenmp-target=amdgcn-amd-amdhsa -march=gfx90a -O3 -o version-1-off openmp-1.cc
+amdclang++ -fopenmp -fopenmp-targets=amdgcn-amd-amdhsa -Xopenmp-target=amdgcn-amd-amdhsa -march=gfx90a -O3 -o version-2-off openmp-2.cc
+amdclang++ -fopenmp -fopenmp-targets=amdgcn-amd-amdhsa -Xopenmp-target=amdgcn-amd-amdhsa -march=gfx90a -O3 -o version-4-off openmp-4.cc
+
+Verifying binaries...
+  OK : version-1-hip
+  OK : version-2-hip
+  OK : version-4-hip
+  OK : version-1-off
+  OK : version-2-off
+  OK : version-4-off
+
+All binaries present -- run jobs are cleared to start.

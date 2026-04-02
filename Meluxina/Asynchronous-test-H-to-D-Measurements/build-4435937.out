@@ -1,0 +1,42 @@
+============================================================
+Stage 1: OpenMP offload + CUDA  (no NVHPC)
+============================================================
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) env/release/2025.1
+clang++ -fopenmp -fopenmp-targets=nvptx64-nvidia-cuda -Xopenmp-target -march=sm_80 --cuda-path=/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0 -Wl,-rpath,/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib -O3 -o version-1-off openmp-1.cc
+clang++ -fopenmp -fopenmp-targets=nvptx64-nvidia-cuda -Xopenmp-target -march=sm_80 --cuda-path=/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0 -Wl,-rpath,/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib -O3 -o version-2-off openmp-2.cc
+clang++ -fopenmp -fopenmp-targets=nvptx64-nvidia-cuda -Xopenmp-target -march=sm_80 --cuda-path=/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0 -Wl,-rpath,/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib -O3 -o version-4-off openmp-4.cc
+make: *** No rule to make target 'version-4-4-off', needed by 'omp'.  Stop.
+nvcc -O3 -Xcompiler -fopenmp -arch=sm_80 -o version-1-cuda version-1.cu
+nvcc -O3 -Xcompiler -fopenmp -arch=sm_80 -o version-2-cuda version-2.cu
+nvcc -O3 -Xcompiler -fopenmp -arch=sm_80 -o version-4-cuda version-4.cu
+make: *** No rule to make target 'version-4-4-cuda', needed by 'cuda'.  Stop.
+============================================================
+Stage 2: OpenACC  (NVHPC)
+============================================================
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) env/release/2025.1
+nvc++ -fast -mp=gpu -cuda -gpu=cc80 -Minfo=accel -lcudart -o version-1-acc version-1.cc
+nvc++ -fast -mp=gpu -cuda -gpu=cc80 -Minfo=accel -lcudart -o version-2-acc version-2.cc
+nvc++ -fast -mp=gpu -cuda -gpu=cc80 -Minfo=accel -lcudart -o version-4-acc version-4.cc
+make: *** No rule to make target 'version-4-4-acc', needed by 'acc'.  Stop.
+
+============================================================
+Verifying binaries...
+============================================================
+  OK : version-1-off
+  OK : version-2-off
+  OK : version-4-off
+  OK : version-1-cuda
+  OK : version-2-cuda
+  OK : version-4-cuda
+  OK : version-1-acc
+  OK : version-2-acc
+  OK : version-4-acc
+
+All binaries present — run jobs are cleared to start.
+============================================================

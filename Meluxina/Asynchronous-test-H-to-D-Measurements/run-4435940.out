@@ -1,0 +1,488 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) env/release/2025.1
+============================================================
+Job ID     : 4435940
+Timestamp  : 20260330_103135
+Results dir: results_4435940_20260330_103135
+CLEAN_LD_PATH: /apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0/nvvm/lib64:/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0/extras/CUPTI/lib64:/apps/USE/easybuild/release/2025.1/software/CUDA/12.8.0/targets/x86_64-linux/lib:/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib/x86_64-unknown-linux-gnu:/apps/USE/easybuild/release/2025.1/software/LLVM/20.1.7-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/zstd/1.5.6-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/lz4/1.10.0-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/Z3/4.13.4-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/GMP/6.3.0-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/Python/3.13.1-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/OpenSSL/3/lib64:/apps/USE/easybuild/release/2025.1/software/libffi/3.4.5-GCCcore-14.2.0/lib64:/apps/USE/easybuild/release/2025.1/software/SQLite/3.47.2-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/Tcl/8.6.16-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/libreadline/8.2-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/bzip2/1.0.8-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/binutils/2.42-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/ncurses/6.5-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/libxml2/2.13.4-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/zlib/1.3.1-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/XZ/5.6.3-GCCcore-14.2.0/lib:/apps/USE/easybuild/release/2025.1/software/GCCcore/14.2.0/lib64
+============================================================
+
+============================================================
+Starting benchmarks
+============================================================
+
+===========================
+N = 940000000,
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=940000000,
+Elapsed time:      0.848090 s
+Total transferred: 7.003546 GB
+PCIe Bandwidth:    8.866984 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+    -> elapsed=0.848090s  bandwidth=8.866984 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=940000000,
+Elapsed time:      1.067914 s
+Total transferred: 14.007092 GB
+PCIe Bandwidth:    14.083531 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+Verification d_B (device 1): PASSED (1000/940000000 samples)
+    -> elapsed=1.067914s  bandwidth=14.083531 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=940000000,
+Elapsed time:      2.194880 s
+Total transferred: 28.014183 GB
+PCIe Bandwidth:    13.704622 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+Verification d_B (device 1): PASSED (1000/940000000 samples)
+Verification d_C (device 2): PASSED (1000/940000000 samples)
+Verification d_D (device 3): PASSED (1000/940000000 samples)
+    -> elapsed=2.194880s  bandwidth=13.704622 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=940000000,
+Elapsed time:      0.606188 s
+Total transferred: 7.003546 GB
+PCIe Bandwidth:    12.405385 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+    -> elapsed=0.606188s  bandwidth=12.405385 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=940000000,
+Elapsed time:      1.135305 s
+Total transferred: 14.007092 GB
+PCIe Bandwidth:    13.247542 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+Verification d_B (device 1): PASSED (1000/940000000 samples)
+    -> elapsed=1.135305s  bandwidth=13.247542 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=940000000,
+Elapsed time:      2.066331 s
+Total transferred: 28.014183 GB
+PCIe Bandwidth:    14.557204 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+Verification d_B (device 1): PASSED (1000/940000000 samples)
+Verification d_C (device 2): PASSED (1000/940000000 samples)
+Verification d_D (device 3): PASSED (1000/940000000 samples)
+    -> elapsed=2.066331s  bandwidth=14.557204 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=940000000,
+Elapsed time:      0.608267 s
+Total transferred: 7.003546 GB
+PCIe Bandwidth:    12.362991 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+    -> elapsed=0.608267s  bandwidth=12.362991 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=940000000,
+Elapsed time:      1.062493 s
+Total transferred: 14.007092 GB
+PCIe Bandwidth:    14.155386 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+Verification d_B (device 1): PASSED (1000/940000000 samples)
+    -> elapsed=1.062493s  bandwidth=14.155386 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=940000000,
+Elapsed time:      2.131306 s
+Total transferred: 28.014183 GB
+PCIe Bandwidth:    14.113411 GB/s
+Verification d_A (device 0): PASSED (1000/940000000 samples)
+Verification d_B (device 1): PASSED (1000/940000000 samples)
+Verification d_C (device 2): PASSED (1000/940000000 samples)
+Verification d_D (device 3): PASSED (1000/940000000 samples)
+    -> elapsed=2.131306s  bandwidth=14.113411 GB/s  status=ok
+
+===========================
+N = 1740000000,
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=1740000000,
+Elapsed time:      1.610211 s
+Total transferred: 12.964010 GB
+PCIe Bandwidth:    8.644829 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+    -> elapsed=1.610211s  bandwidth=8.644829 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=1740000000,
+Elapsed time:      2.743611 s
+Total transferred: 25.928020 GB
+PCIe Bandwidth:    10.147211 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+Verification d_B (device 1): PASSED (1000/1740000000 samples)
+    -> elapsed=2.743611s  bandwidth=10.147211 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=1740000000,
+Elapsed time:      5.684451 s
+Total transferred: 51.856041 GB
+PCIe Bandwidth:    9.795141 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+Verification d_B (device 1): PASSED (1000/1740000000 samples)
+Verification d_C (device 2): PASSED (1000/1740000000 samples)
+Verification d_D (device 3): PASSED (1000/1740000000 samples)
+    -> elapsed=5.684451s  bandwidth=9.795141 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=1740000000,
+Elapsed time:      1.126634 s
+Total transferred: 12.964010 GB
+PCIe Bandwidth:    12.355393 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+    -> elapsed=1.126634s  bandwidth=12.355393 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=1740000000,
+Elapsed time:      2.004691 s
+Total transferred: 25.928020 GB
+PCIe Bandwidth:    13.887426 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+Verification d_B (device 1): PASSED (1000/1740000000 samples)
+    -> elapsed=2.004691s  bandwidth=13.887426 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=1740000000,
+Elapsed time:      3.968889 s
+Total transferred: 51.856041 GB
+PCIe Bandwidth:    14.029115 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+Verification d_B (device 1): PASSED (1000/1740000000 samples)
+Verification d_C (device 2): PASSED (1000/1740000000 samples)
+Verification d_D (device 3): PASSED (1000/1740000000 samples)
+    -> elapsed=3.968889s  bandwidth=14.029115 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=1740000000,
+Elapsed time:      1.132737 s
+Total transferred: 12.964010 GB
+PCIe Bandwidth:    12.288817 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+    -> elapsed=1.132737s  bandwidth=12.288817 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=1740000000,
+Elapsed time:      1.986588 s
+Total transferred: 25.928020 GB
+PCIe Bandwidth:    14.013978 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+Verification d_B (device 1): PASSED (1000/1740000000 samples)
+    -> elapsed=1.986588s  bandwidth=14.013978 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=1740000000,
+Elapsed time:      3.962397 s
+Total transferred: 51.856041 GB
+PCIe Bandwidth:    14.052100 GB/s
+Verification d_A (device 0): PASSED (1000/1740000000 samples)
+Verification d_B (device 1): PASSED (1000/1740000000 samples)
+Verification d_C (device 2): PASSED (1000/1740000000 samples)
+Verification d_D (device 3): PASSED (1000/1740000000 samples)
+    -> elapsed=3.962397s  bandwidth=14.052100 GB/s  status=ok
+
+===========================
+N = 2550000000,
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=2550000000,
+Elapsed time:      2.385094 s
+Total transferred: 18.998981 GB
+PCIe Bandwidth:    8.553122 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+    -> elapsed=2.385094s  bandwidth=8.553122 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=2550000000,
+Elapsed time:      4.258682 s
+Total transferred: 37.997961 GB
+PCIe Bandwidth:    9.580429 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+Verification d_B (device 1): PASSED (1000/2550000000 samples)
+    -> elapsed=4.258682s  bandwidth=9.580429 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=2550000000,
+Elapsed time:      5.576666 s
+Total transferred: 75.995922 GB
+PCIe Bandwidth:    14.632398 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+Verification d_B (device 1): PASSED (1000/2550000000 samples)
+Verification d_C (device 2): PASSED (1000/2550000000 samples)
+Verification d_D (device 3): PASSED (1000/2550000000 samples)
+    -> elapsed=5.576666s  bandwidth=14.632398 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=2550000000,
+Elapsed time:      1.702983 s
+Total transferred: 18.998981 GB
+PCIe Bandwidth:    11.978984 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+    -> elapsed=1.702983s  bandwidth=11.978984 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=2550000000,
+Elapsed time:      2.996857 s
+Total transferred: 37.997961 GB
+PCIe Bandwidth:    13.614264 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+Verification d_B (device 1): PASSED (1000/2550000000 samples)
+    -> elapsed=2.996857s  bandwidth=13.614264 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=2550000000,
+Elapsed time:      4.264408 s
+Total transferred: 75.995922 GB
+PCIe Bandwidth:    19.135130 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+Verification d_B (device 1): PASSED (1000/2550000000 samples)
+Verification d_C (device 2): PASSED (1000/2550000000 samples)
+Verification d_D (device 3): PASSED (1000/2550000000 samples)
+    -> elapsed=4.264408s  bandwidth=19.135130 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=2550000000,
+Elapsed time:      1.657145 s
+Total transferred: 18.998981 GB
+PCIe Bandwidth:    12.310329 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+    -> elapsed=1.657145s  bandwidth=12.310329 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=2550000000,
+Elapsed time:      2.887861 s
+Total transferred: 37.997961 GB
+PCIe Bandwidth:    14.128104 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+Verification d_B (device 1): PASSED (1000/2550000000 samples)
+    -> elapsed=2.887861s  bandwidth=14.128104 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=2550000000,
+Elapsed time:      4.209521 s
+Total transferred: 75.995922 GB
+PCIe Bandwidth:    19.384629 GB/s
+Verification d_A (device 0): PASSED (1000/2550000000 samples)
+Verification d_B (device 1): PASSED (1000/2550000000 samples)
+Verification d_C (device 2): PASSED (1000/2550000000 samples)
+Verification d_D (device 3): PASSED (1000/2550000000 samples)
+    -> elapsed=4.209521s  bandwidth=19.384629 GB/s  status=ok
+
+===========================
+N = 3350000000,
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=3350000000,
+Elapsed time:      3.138813 s
+Total transferred: 24.959445 GB
+PCIe Bandwidth:    8.538259 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+    -> elapsed=3.138813s  bandwidth=8.538259 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=3350000000,
+Elapsed time:      3.876917 s
+Total transferred: 49.918890 GB
+PCIe Bandwidth:    13.825419 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+Verification d_B (device 1): PASSED (1000/3350000000 samples)
+    -> elapsed=3.876917s  bandwidth=13.825419 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=3350000000,
+Elapsed time:      7.535673 s
+Total transferred: 99.837780 GB
+PCIe Bandwidth:    14.225671 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+Verification d_B (device 1): PASSED (1000/3350000000 samples)
+Verification d_C (device 2): PASSED (1000/3350000000 samples)
+Verification d_D (device 3): PASSED (1000/3350000000 samples)
+    -> elapsed=7.535673s  bandwidth=14.225671 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=3350000000,
+Elapsed time:      2.160720 s
+Total transferred: 24.959445 GB
+PCIe Bandwidth:    12.403275 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+    -> elapsed=2.160720s  bandwidth=12.403275 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=3350000000,
+Elapsed time:      3.936981 s
+Total transferred: 49.918890 GB
+PCIe Bandwidth:    13.614493 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+Verification d_B (device 1): PASSED (1000/3350000000 samples)
+    -> elapsed=3.936981s  bandwidth=13.614493 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=3350000000,
+Elapsed time:      5.987362 s
+Total transferred: 99.837780 GB
+PCIe Bandwidth:    17.904379 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+Verification d_B (device 1): PASSED (1000/3350000000 samples)
+Verification d_C (device 2): PASSED (1000/3350000000 samples)
+Verification d_D (device 3): PASSED (1000/3350000000 samples)
+    -> elapsed=5.987362s  bandwidth=17.904379 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=3350000000,
+Elapsed time:      2.168891 s
+Total transferred: 24.959445 GB
+PCIe Bandwidth:    12.356546 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+    -> elapsed=2.168891s  bandwidth=12.356546 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=3350000000,
+Elapsed time:      3.982076 s
+Total transferred: 49.918890 GB
+PCIe Bandwidth:    13.460316 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+Verification d_B (device 1): PASSED (1000/3350000000 samples)
+    -> elapsed=3.982076s  bandwidth=13.460316 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=3350000000,
+Elapsed time:      6.031014 s
+Total transferred: 99.837780 GB
+PCIe Bandwidth:    17.774789 GB/s
+Verification d_A (device 0): PASSED (1000/3350000000 samples)
+Verification d_B (device 1): PASSED (1000/3350000000 samples)
+Verification d_C (device 2): PASSED (1000/3350000000 samples)
+Verification d_D (device 3): PASSED (1000/3350000000 samples)
+    -> elapsed=6.031014s  bandwidth=17.774789 GB/s  status=ok
+
+===========================
+N = 4160000000,
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=4160000000,
+Elapsed time:      6.376567 s
+Total transferred: 30.994415 GB
+PCIe Bandwidth:    5.219109 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+    -> elapsed=6.376567s  bandwidth=5.219109 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=4160000000,
+Elapsed time:      5.321582 s
+Total transferred: 61.988831 GB
+PCIe Bandwidth:    12.507559 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+Verification d_B (device 1): PASSED (1000/4160000000 samples)
+    -> elapsed=5.321582s  bandwidth=12.507559 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=4160000000,
+Elapsed time:      7.864844 s
+Total transferred: 123.977661 GB
+PCIe Bandwidth:    16.925955 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+Verification d_B (device 1): PASSED (1000/4160000000 samples)
+Verification d_C (device 2): PASSED (1000/4160000000 samples)
+Verification d_D (device 3): PASSED (1000/4160000000 samples)
+    -> elapsed=7.864844s  bandwidth=16.925955 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=4160000000,
+Elapsed time:      2.687442 s
+Total transferred: 30.994415 GB
+PCIe Bandwidth:    12.383525 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+    -> elapsed=2.687442s  bandwidth=12.383525 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=4160000000,
+Elapsed time:      3.560653 s
+Total transferred: 61.988831 GB
+PCIe Bandwidth:    18.693201 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+Verification d_B (device 1): PASSED (1000/4160000000 samples)
+    -> elapsed=3.560653s  bandwidth=18.693201 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=4160000000,
+Elapsed time:      6.548997 s
+Total transferred: 123.977661 GB
+PCIe Bandwidth:    20.326777 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+Verification d_B (device 1): PASSED (1000/4160000000 samples)
+Verification d_C (device 2): PASSED (1000/4160000000 samples)
+Verification d_D (device 3): PASSED (1000/4160000000 samples)
+    -> elapsed=6.548997s  bandwidth=20.326777 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=4160000000,
+Elapsed time:      2.717141 s
+Total transferred: 30.994415 GB
+PCIe Bandwidth:    12.248169 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+    -> elapsed=2.717141s  bandwidth=12.248169 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=4160000000,
+Elapsed time:      3.460850 s
+Total transferred: 61.988831 GB
+PCIe Bandwidth:    19.232270 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+Verification d_B (device 1): PASSED (1000/4160000000 samples)
+    -> elapsed=3.460850s  bandwidth=19.232270 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=4160000000,
+Elapsed time:      6.456655 s
+Total transferred: 123.977661 GB
+PCIe Bandwidth:    20.617487 GB/s
+Verification d_A (device 0): PASSED (1000/4160000000 samples)
+Verification d_B (device 1): PASSED (1000/4160000000 samples)
+Verification d_C (device 2): PASSED (1000/4160000000 samples)
+Verification d_D (device 3): PASSED (1000/4160000000 samples)
+    -> elapsed=6.456655s  bandwidth=20.617487 GB/s  status=ok
+
+===========================
+N = 4960000000
+===========================
+
+>>> Running: framework=omp_off  version=v1  N=4960000000
+Elapsed time:      4.597987 s
+Total transferred: 36.954880 GB
+PCIe Bandwidth:    8.629863 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+    -> elapsed=4.597987s  bandwidth=8.629863 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v2  N=4960000000
+Elapsed time:      6.196931 s
+Total transferred: 73.909760 GB
+PCIe Bandwidth:    12.806339 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+Verification d_B (device 1): PASSED (1000/4960000000 samples)
+    -> elapsed=6.196931s  bandwidth=12.806339 GB/s  status=ok
+
+>>> Running: framework=omp_off  version=v4  N=4960000000
+Elapsed time:      11.383097 s
+Total transferred: 147.819519 GB
+PCIe Bandwidth:    13.943481 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+Verification d_B (device 1): PASSED (1000/4960000000 samples)
+Verification d_C (device 2): PASSED (1000/4960000000 samples)
+Verification d_D (device 3): PASSED (1000/4960000000 samples)
+    -> elapsed=11.383097s  bandwidth=13.943481 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v1  N=4960000000
+Elapsed time:      3.216601 s
+Total transferred: 36.954880 GB
+PCIe Bandwidth:    12.336004 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+    -> elapsed=3.216601s  bandwidth=12.336004 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v2  N=4960000000
+Elapsed time:      4.369542 s
+Total transferred: 73.909760 GB
+PCIe Bandwidth:    18.162087 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+Verification d_B (device 1): PASSED (1000/4960000000 samples)
+    -> elapsed=4.369542s  bandwidth=18.162087 GB/s  status=ok
+
+>>> Running: framework=cuda  version=v4  N=4960000000
+Elapsed time:      8.248624 s
+Total transferred: 147.819519 GB
+PCIe Bandwidth:    19.241998 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+Verification d_B (device 1): PASSED (1000/4960000000 samples)
+Verification d_C (device 2): PASSED (1000/4960000000 samples)
+Verification d_D (device 3): PASSED (1000/4960000000 samples)
+    -> elapsed=8.248624s  bandwidth=19.241998 GB/s  status=ok
+
+>>> Running: framework=acc  version=v1  N=4960000000
+Elapsed time:      3.237405 s
+Total transferred: 36.954880 GB
+PCIe Bandwidth:    12.256731 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+    -> elapsed=3.237405s  bandwidth=12.256731 GB/s  status=ok
+
+>>> Running: framework=acc  version=v2  N=4960000000
+Elapsed time:      4.395352 s
+Total transferred: 73.909760 GB
+PCIe Bandwidth:    18.055437 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+Verification d_B (device 1): PASSED (1000/4960000000 samples)
+    -> elapsed=4.395352s  bandwidth=18.055437 GB/s  status=ok
+
+>>> Running: framework=acc  version=v4  N=4960000000
+Elapsed time:      8.220195 s
+Total transferred: 147.819519 GB
+PCIe Bandwidth:    19.308545 GB/s
+Verification d_A (device 0): PASSED (1000/4960000000 samples)
+Verification d_B (device 1): PASSED (1000/4960000000 samples)
+Verification d_C (device 2): PASSED (1000/4960000000 samples)
+Verification d_D (device 3): PASSED (1000/4960000000 samples)
+    -> elapsed=8.220195s  bandwidth=19.308545 GB/s  status=ok
